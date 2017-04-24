@@ -9814,9 +9814,9 @@ module.exports = React.createClass({
     displayName: 'exports',
 
     handleClick() {
-        alert('first isomorphic app!');
+        alert('activated isomorph');
     },
-    render() {
+    render: function () {
         return React.createElement(
             'html',
             null,
@@ -9827,30 +9827,25 @@ module.exports = React.createClass({
                     'title',
                     null,
                     this.props.title
-                ),
-                React.createElement('link', { rel: 'stylesheet', href: '/style.css' })
+                )
             ),
             React.createElement(
                 'body',
                 null,
                 React.createElement(
-                    'div',
+                    'h1',
                     null,
-                    React.createElement(
-                        'h1',
-                        null,
-                        this.props.title
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        this.props.description
-                    ),
-                    React.createElement(
-                        'button',
-                        { onClick: this.handleClick },
-                        'Submit'
-                    )
+                    this.props.title
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    this.props.description
+                ),
+                React.createElement(
+                    'button',
+                    { onClick: this.handleClick },
+                    'Alert button'
                 ),
                 React.createElement('script', { dangerouslySetInnerHTML: {
                         __html: 'window.PROPS=' + JSON.stringify(this.props)
@@ -9878,11 +9873,10 @@ module.exports = __webpack_require__(102);
 var React = __webpack_require__(54);
 var ReactDOM = __webpack_require__(87);
 var Component = __webpack_require__(86);
-
 var props = window.PROPS;
 
 ReactDOM.render(
-    React.createElement(Component), document
+    React.createElement(Component, props), document
 );
 
 /***/ }),
