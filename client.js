@@ -1,8 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Component = require('./Components/index.jsx');
-var props = window.PROPS;
+var routes = require('./routes/routes.jsx');
 
 ReactDOM.render(
-    React.createElement(Component, props), document
+    React.createElement(routes), document
 );

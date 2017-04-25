@@ -8,12 +8,7 @@ var Component = require('../Components/index.jsx');
 router.get('*', function(req, res) {
   var props = { title: 'Isomorphic application', description: 'This application renders both on server side and client side with REACT'}
   ReactRouter.match({
-    routes: (
-      <ReactRouter.Router history={ReactRouter.browserHistory}>
-        <ReactRouter.Route path='/' component={require('../Components/index.jsx')}>
-        </ReactRouter.Route>
-      </ReactRouter.Router>
-    ),
+    routes: require('./routes.jsx'),
     location:req.url
   }, function(error, redirectLocation, renderProps) {
     if (renderProps) {
